@@ -4,7 +4,6 @@ import { formatWeatherData, getDay, getImage } from './utilities';
 describe('Utility Classes', () => {
   it('should format the weather data response', () => {
     const formatedData = formatWeatherData(mockWeatherResponse);
-    console.log("********* formatted data--", JSON.stringify(formatedData))
     expect(formatedData.length).toEqual(6);
     expect(formatedData[2].date).toEqual('2021-10-24 00:00:00');
     expect(formatedData[2].day).toEqual('Sunday');
@@ -39,7 +38,7 @@ describe('Utility Classes', () => {
     expect(url7).toEqual('assets/cloud-day.png');
   });
 
-  it('should return day', ()=>{
+  it('should return day', () => {
     const day = getDay('2021-10-24 00:00:00');
     expect(day).toEqual('Sunday');
 
@@ -57,5 +56,5 @@ describe('Utility Classes', () => {
 
     const day6 = getDay('2021-10-29 00:00:00');
     expect(day6).toEqual('Friday');
-  })
+  });
 });
