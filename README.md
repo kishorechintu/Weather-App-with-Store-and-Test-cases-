@@ -2,9 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
-####################################### Important #######################################
+## Important 
 An Active Internet connection is must, inorder to run the Application.
-#########################################################################################
 
 ## Development server
 
