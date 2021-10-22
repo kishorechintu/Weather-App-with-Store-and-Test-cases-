@@ -1,0 +1,40 @@
+<div class="main-container">
+  <mat-card class="wrapper">
+    <div class="spinner-container" *ngIf="loading$ | async">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="wrapper-title">Weather App</div>
+    <hr />
+
+    <div class="search-container">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input
+          matInput
+          type="search"
+          placeholder="Enter city name to search "
+          value="Hyderabad"
+          (keyup.enter)="search()"
+          [(ngModel)]="searchText"
+        />
+        <button
+          *ngIf="searchText"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="search()"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div *ngIf="isError$ | async">
+      <app-not-found></app-not-found>
+    </div>
+    <div>
+      <div class="card-container">
+        <app-weather-card></app-weather-card>
+      </div>
+    </div>
+  </mat-card>
+</div>

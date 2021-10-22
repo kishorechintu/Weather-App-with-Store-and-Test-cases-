@@ -1,0 +1,35 @@
+<div class="card-wrapper">
+  <ng-container *ngFor="let weatherData of weatherData$ | async">
+    <mat-card class="weather-card">
+      <div class="day-title">
+        <p>{{ weatherData.day }}</p>
+      </div>
+      <div class="weather-container">
+        <div class="weather-icon">
+          <img [src]="weatherData.image" width="70" height="70px" alt="" />
+        </div>
+        <div class="temperature-value">
+          <p>{{ weatherData.temperature }} <span>&deg;</span><span>C</span></p>
+        </div>
+        <div class="min-max">
+          <div>
+            <span
+              >Min: {{ weatherData.min }}<span>&deg;</span><span>C</span></span
+            >
+          </div>
+          <div>
+            <span
+              >Max: {{ weatherData.max }}<span>&deg;</span><span>C</span></span
+            >
+          </div>
+        </div>
+        <div class="temperature-description">
+          <p>{{ weatherData.description | titlecase }}</p>
+        </div>
+        <div class="location">
+          <p>{{ weatherData.location }}</p>
+        </div>
+      </div>
+    </mat-card>
+  </ng-container>
+</div>
